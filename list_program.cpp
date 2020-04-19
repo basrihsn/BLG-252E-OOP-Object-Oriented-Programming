@@ -1,3 +1,7 @@
+/*
+   In this program sample linked list operations can be applied.
+   Whole program is written based on OOP terminology.
+*/
 #include <iostream>
 using namespace std;
 
