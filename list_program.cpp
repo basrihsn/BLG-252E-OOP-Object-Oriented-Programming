@@ -22,7 +22,7 @@ Node::~Node()
 void printList(Node * head)
 {
 	if(head == NULL){
-		cout << "Listede eleman yok" << endl;
+		cout << "List is empty..." << endl;
 		return;
 	}
 	Node * iter = head;
@@ -68,9 +68,9 @@ void nodeInfo(Node * head, int key)
 	int i = 1;
 	while(head != NULL){
 		if(i == key){
-			cout << i << ". node'un adresi = " << head << endl;
-			cout << i << ". node'un verisi = " << head->data << endl;
-			cout << i << ". node'un bagli oldugu node'un adresi " << head->next << "\n\n";
+			cout << i << ". node address = " << head << endl;
+			cout << i << ". node data = " << head->data << endl;
+			cout << i << ". node's next's address " << head->next << "\n\n";
 		}
 		head = head->next;
 		i++;
@@ -90,7 +90,7 @@ int count(Node * head)
 bool search(Node * head, int key)
 {
 	if(head == NULL){
-		cout << "Liste bos..." << endl;
+		cout << "List is empty..." << endl;
 		return false;
 	}
 	while(head != NULL){
@@ -108,25 +108,25 @@ int main()
 	Node * head = NULL;
 	
 	while(1){
-		cout << "LISTE ISLEMLERI PROGRAMI... \n";
-		cout << "1. Listenin basina eleman ekle \n";
-		cout << "2. Listenin sonuna eleman ekle \n";
-		cout <<	"3. Listeyi ekrana bastir \n";
-		cout << "4. Listedeki eleman sayisi \n";
-		cout << "5. Istenen dugumun bilgisi(varsa) \n";
-		cout << "6. Cikis \n";
-		cout << "Seciminiz: ";
+		cout << "LINKED LIST OPERATIONS PROGRAM... \n";
+		cout << "1. Add node head of the list \n";
+		cout << "2. Add node end of the list \n";
+		cout <<	"3. Print list \n";
+		cout << "4. Number of nodes in list \n";
+		cout << "5. Information of node (if exist) \n";
+		cout << "6. Exit \n";
+		cout << "Choice: ";
 		cin >> choice;
 		cin.clear();
 		switch(choice){
 			case 1:
-				cout << "Eklemek istediginiz sayiyi giriniz: ";
+				cout << "Enter the number: ";
 				cin >> data;
 				cin.clear();
 				head = insert_head(head, data);
 				break;
 			case 2:
-				cout << "Eklemek istediginiz sayiyi giriniz: ";
+				cout << "Enter the number: ";
 				cin >> data;
 				cin.clear();
 				head = insert_last(head, data);
@@ -135,10 +135,10 @@ int main()
 				printList(head);
 				break;
 			case 4:
-				cout << "Listede " << count(head) << " eleman vardir." << endl;
+				cout << "In list there are " << count(head) << " nodes." << endl;
 				break;
 			case 5:
-				cout << "Hangi dugumun bilgisini istiyorsunuz?: ";
+				cout << "Which node's information do you want?: ";
 				cin >> data;
 				cin.clear();
 				nodeInfo(head, data);
@@ -147,7 +147,7 @@ int main()
 				exit(1);
 				break;
 			default:
-				cout << "Yanlis secim" << endl;
+				cout << "Wrong choice..." << endl;
 		}
 	}
 	
